@@ -14,10 +14,3 @@ resource "kubectl_manifest" "cluster_boostrap" {
   yaml_body  = templatefile("./argocd/applicationSet.tftpl", { cloudflare_token = var.cloudflare_token, ingress_auth = var.ingress_auth })
   depends_on = [helm_release.argocd]
 }
-
-data "kubernetes_service_v1" "ingress" {
-  metadata {
-    name = "ingress-nginx-controller"
-    namespace = "ingress-nginx"
-  }
-}

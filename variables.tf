@@ -33,10 +33,11 @@ variable "cloudflare_token" {
   sensitive = true
 }
 
-variable "cloudflare_zone_id" {
-  type      = string
-  sensitive = true
-}
+# variable "cloudflare_zone_id" {
+#   type      = string
+#   sensitive = true
+# }
+
 variable "ingress_auth" {
   type      = string
   sensitive = true

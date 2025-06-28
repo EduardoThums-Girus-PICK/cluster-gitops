@@ -26,15 +26,15 @@ spec:
               - name: argocd.certManager.enabled
                 value: 'true'
               - name: argocd.ingressNginx.enabled
-                value: 'false'
+                value: 'true'
               - name: argocd.girus.enabled
-                value: 'false'
+                value: 'true'
               - name: argocd.girus.ingress.enabled
-                value: 'false'
-              - name: argocd.girus.ingress.cloudflareToken
-                value: '${cloudflare_token}'
+                value: 'true'
               - name: argocd.girus.ingress.auth
                 value: '${ingress_auth}'
+              - name: argocd.girus.ingress.cloudflareToken
+                value: '${cloudflare_token}'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: argocd

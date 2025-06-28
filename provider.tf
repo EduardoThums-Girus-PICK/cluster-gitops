@@ -16,10 +16,10 @@ terraform {
       source = "rackerlabs/spot"
     }
 
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 5"
-    }
+    # cloudflare = {
+    #   source  = "cloudflare/cloudflare"
+    #   version = "~> 5"
+    # }
   }
 }
 
@@ -41,6 +41,6 @@ provider "helm" {
   }
 }
 
-provider "cloudflare" {
-  api_token = var.cloudflare_token
-}
+# provider "cloudflare" {
+#   api_token = var.cloudflare_token
+# }
