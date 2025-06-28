@@ -41,6 +41,11 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan -no-color -input=false -out=plan
+        env:
+          TF_VAR_cloudflare_token: ${{ secrets.TF_VAR_CLOUDFLARE_TOKEN }}
+          TF_VAR_cloudflare_zone_id: ${{ secrets.TF_VAR_CLOUDFLARE_ZONE_ID }}
+          TF_VAR_ingress_auth: ${{ secrets.TF_VAR_INGRESS_AUTH }}
+          TF_VAR_rackspace_spot_token: ${{ secrets.TF_VAR_RACKSPACE_SPOT_TOKEN }}
         continue-on-error: false
 
       - name: Terraform Apply
