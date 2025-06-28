@@ -34,7 +34,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/EduardoThums/terraform-helm-test.git
+    repoURL: https://github.com/EduardoThums-Girus-PICK/cluster-gitops.git
     targetRevision: main
     path: helm/girus-ingress
   destination:
