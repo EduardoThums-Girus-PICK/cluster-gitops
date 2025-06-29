@@ -38,9 +38,11 @@ spec:
     targetRevision: main
     path: helm/girus-ingress
     helm:
-      valuesObject:
-        cloudflareToken: {{ if .Values.argocd.girus.ingress.cloudflareToken }}
-        auth: {{ if .Values.argocd.girus.ingress.auth }}
+      parameters:
+        - name: cloudflareToken
+          value: '{{ .Values.argocd.girus.ingress.cloudflareToken }}'
+        - name: auth
+          value: '{{ .Values.argocd.girus.ingress.auth }}'
   destination:
     namespace: girus
     server: https://kubernetes.default.svc
