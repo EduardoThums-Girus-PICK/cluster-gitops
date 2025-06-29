@@ -18,6 +18,11 @@ O objetivo deste projeto é automatizar a criação da infraestrutura e o deploy
 - **Cert-manager**: Adiciona certificados TLS ao cluster e os gerencia automaticamente. É configurado para emitir certificados, provavelmente usando Let's Encrypt.
 - **NGINX Ingress Controller**: Atua como o ponto de entrada para o tráfego HTTP/S no cluster, roteando as requisições para os serviços corretos.
 
+## Exemplo
+
+![alt](./assets/argocd.png)
+![alt](./assets/girus.png)
+
 ## Gerenciamento de Segredos
 
 **Segredos NUNCA devem ser comitados diretamente neste repositório.** O gerenciamento de informações sensíveis (como tokens de API, senhas, etc.) deve seguir uma das seguintes abordagens:
