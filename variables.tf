@@ -39,27 +39,21 @@ variable "argocd_ingress_auth" {
 }
 
 variable "argocd_cert_manager_enabled" {
-  type      = bool
-  sensitive = true
+  type    = bool
+  default = true
 }
 
 variable "argocd_ingress_nginx_enabled" {
-  type      = bool
-  sensitive = true
+  type    = bool
+  default = true
 }
 
 variable "argocd_girus_enabled" {
-  type      = bool
-  sensitive = true
+  type    = bool
+  default = true
 }
 
 variable "argocd_girus_ingress_enabled" {
-  type      = bool
-  sensitive = true
+  type    = bool
+  default = true
 }
-
-# variable "cloudflare_zone_id" {
-#   type      = string
-#   sensitive = true
-# }
-

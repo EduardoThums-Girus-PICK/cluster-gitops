@@ -32,9 +32,9 @@ spec:
               - name: argocd.girus.ingress.enabled
                 value: '${argocd_girus_ingress_enabled}''
               - name: argocd.girus.ingress.auth
-                value: '${base64encode(ingress_auth)}'
+                value: '${base64encode(argocd_ingress_auth)}'
               - name: argocd.girus.ingress.cloudflareToken
-                value: '${base64encode(cloudflare_token)}'
+                value: '${base64encode(argocd_cloudflare_token)}'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: argocd

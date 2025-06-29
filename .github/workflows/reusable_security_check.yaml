@@ -1,0 +1,23 @@
+name: Analisa a qualidade do código terraform
+
+on:
+  workflow_call:
+
+jobs:
+  validate:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # 4.2.2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: "1.5.7"
+
+      - name: Run terraform fmt with check
+        run: terraform fmt -check
+
+      - name: Run terraform validate
+        run: terraform validate
