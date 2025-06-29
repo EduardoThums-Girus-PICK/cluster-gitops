@@ -11,6 +11,15 @@ resource "helm_release" "argocd" {
 }
 
 resource "kubectl_manifest" "cluster_boostrap" {
-  yaml_body  = templatefile("./argocd/applicationSet.tftpl", { cloudflare_token = var.cloudflare_token, ingress_auth = var.ingress_auth })
+  yaml_body = templatefile(
+    "./argocd/applicationSet.tftpl",
+    {
+      cloudflare_token             = var.cloudflare_token,
+      argocd_cert_manager_enabled  = var.argocd_cert_manager_enabled,
+      argocd_ingress_nginx_enabled = var.argocd_ingress_nginx_enabled,
+      argocd_girus_enabled         = var.argocd_girus_enabled,
+      argocd_girus_ingress_enabled = var.argocd_girus_ingress_enabled
+    }
+  )
   depends_on = [helm_release.argocd]
 }

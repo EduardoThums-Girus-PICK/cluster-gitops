@@ -28,8 +28,33 @@ variable "kubeconfig_path" {
   default     = "~/.kube/config"
 }
 
-variable "cloudflare_token" {
+variable "argocd_cloudflare_token" {
   type      = string
+  sensitive = true
+}
+
+variable "argocd_ingress_auth" {
+  type      = string
+  sensitive = true
+}
+
+variable "argocd_cert_manager_enabled" {
+  type      = bool
+  sensitive = true
+}
+
+variable "argocd_ingress_nginx_enabled" {
+  type      = bool
+  sensitive = true
+}
+
+variable "argocd_girus_enabled" {
+  type      = bool
+  sensitive = true
+}
+
+variable "argocd_girus_ingress_enabled" {
+  type      = bool
   sensitive = true
 }
 
@@ -38,7 +63,3 @@ variable "cloudflare_token" {
 #   sensitive = true
 # }
 
-variable "ingress_auth" {
-  type      = string
-  sensitive = true
-}

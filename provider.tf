@@ -23,9 +23,9 @@ provider "spot" {
 }
 
 provider "kubectl" {
-  host     = data.spot_kubeconfig.example.kubeconfigs[0].host
-  token    = data.spot_kubeconfig.example.kubeconfigs[0].token
-  insecure = data.spot_kubeconfig.example.kubeconfigs[0].insecure
+  host             = data.spot_kubeconfig.example.kubeconfigs[0].host
+  token            = data.spot_kubeconfig.example.kubeconfigs[0].token
+  insecure         = data.spot_kubeconfig.example.kubeconfigs[0].insecure
   load_config_file = false
 }
 
