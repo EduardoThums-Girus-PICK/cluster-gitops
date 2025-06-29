@@ -7,11 +7,6 @@ terraform {
       version = ">= 1.7.0"
     }
 
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = "2.37.1"
-    }
-
     spot = {
       source = "rackerlabs/spot"
     }
@@ -27,10 +22,11 @@ provider "spot" {
   token = var.rackspace_spot_token
 }
 
-provider "kubernetes" {
+provider "kubectl" {
   host     = data.spot_kubeconfig.example.kubeconfigs[0].host
   token    = data.spot_kubeconfig.example.kubeconfigs[0].token
   insecure = data.spot_kubeconfig.example.kubeconfigs[0].insecure
+  load_config_file = false
 }
 
 provider "helm" {
