@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: girus
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
   source:
@@ -31,6 +33,8 @@ kind: Application
 metadata:
   name: girus-ingress
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   project: default
   source:
