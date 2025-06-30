@@ -24,13 +24,13 @@ spec:
           helm:
             parameters:
               - name: argocd.certManager.enabled
-                value: '${argocd_cert_manager_enabled}''
+                value: '${argocd_cert_manager_enabled}'
               - name: argocd.ingressNginx.enabled
-                value: '${argocd_ingress_nginx_enabled}''
+                value: '${argocd_ingress_nginx_enabled}'
               - name: argocd.girus.enabled
-                value: '${argocd_girus_enabled}''
+                value: '${argocd_girus_enabled}'
               - name: argocd.girus.ingress.enabled
-                value: '${argocd_girus_ingress_enabled}''
+                value: '${argocd_girus_ingress_enabled}'
               - name: argocd.girus.ingress.auth
                 value: '${base64encode(argocd_ingress_auth)}'
               - name: argocd.girus.ingress.cloudflareToken
